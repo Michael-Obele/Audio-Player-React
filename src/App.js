@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
+  var audio =
+    'https://github.com/Michael-Obele/Michael-Obele/blob/main/Shaker.mp3?raw=true';
+  function play() {
+    const sound = document.getElementById('E');
+    sound.currentTime = 0;
+    sound.play();
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='drum-machine'>
+      <h1>Audio Player</h1>
+      <div id='display'>
+        <div className='btn drum-pad' onClick={play}>
+          <audio className='clip' id='E' src={audio} />
+          'E'
+        </div>
+      </div>
     </div>
   );
 }
